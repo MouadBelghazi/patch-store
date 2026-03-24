@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "one-product-landing",
+      "settings": {
+        "headline": "Smooth Your Wrinkles. Naturally.",
+        "subheadline": "Reusable silicone patches designed to help smooth the skin, prevent fine lines, and reveal a more rested, refreshed look, no injections needed.",
+        "cta_label": "Shop now",
+        "story_title": "A Simpler Way to Care for Your Skin",
+        "story_body": "Today, we’re all looking for simple, natural, and effective ways to take care of our skin. Between expensive creams and complicated routines, there’s a growing need for something easier, something that fits into everyday life. Our silicone patches offer a simple, reusable solution inspired by dermatological techniques, helping your skin look smoother and more refreshed over time.",
+        "product_description": "Our reusable silicone patches are designed to visibly smooth fine lines and support your skin overnight effortlessly. Inspired by dermatological techniques, they help improve the appearance of wrinkles by keeping the skin hydrated and minimizing movement during sleep.",
+        "benefits": "Helps reduce the appearance of fine lines and wrinkles\nSupports smoother, more even-looking skin\nPrevents sleep lines caused by facial compression\nEnhances skin hydration and elasticity\nComfortable, flexible fit that stays in place overnight",
+        "silicone_why": "Silicone is widely used in skincare for its ability to:",
+        "silicone_benefits": "Lock in moisture\nImprove skin texture\nCreate a smoothing effect on the skin’s surface",
+        "how_to_use": "Apply on clean, dry skin\nGently smooth the skin before placing the patch\nLeave on for 4–8 hours (ideally overnight)\nRemove slowly and rinse with water after use",
+        "product_details": "Reusable multiple times\nSuitable for all skin types\nNon-invasive, needle-free solution\nDesigned for overnight use\nLightweight and skin-friendly",
+        "promise": "With consistent use:\nFine lines and expression wrinkles appear visibly reduced\nSkin feels smoother and more hydrated\nSleep lines are less noticeable\nResults are gradual, natural, and non-invasive."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

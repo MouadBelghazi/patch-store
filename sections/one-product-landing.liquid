@@ -1,0 +1,183 @@
+{% assign selected_product = section.settings.product %}
+
+<section class="hero section-container">
+  <div class="hero__content">
+    <p class="eyebrow">Derm-inspired silicone care</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p class="subheadline">{{ section.settings.subheadline }}</p>
+
+    {% if selected_product != blank %}
+      <div class="hero__cta-group">
+        <a href="{{ selected_product.url }}" class="button button--primary">{{ section.settings.cta_label }}</a>
+        <p class="hero__price">{{ selected_product.price | money }}</p>
+      </div>
+    {% else %}
+      <p class="notice">Select a product in the section settings to connect your CTA and pricing.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section-container content-card">
+  <h2>{{ section.settings.story_title }}</h2>
+  <p>{{ section.settings.story_body }}</p>
+</section>
+
+<section class="section-container grid-two">
+  <article class="content-card">
+    <h2>Product Description</h2>
+    <p>{{ section.settings.product_description }}</p>
+  </article>
+
+  <article class="content-card">
+    <h2>Benefits</h2>
+    <ul>
+      {% assign benefit_lines = section.settings.benefits | newline_to_br | split: '<br />' %}
+      {% for item in benefit_lines %}
+        {% if item != blank %}
+          <li>{{ item | strip }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </article>
+</section>
+
+<section class="section-container grid-two">
+  <article class="content-card">
+    <h2>Why Silicone?</h2>
+    <p>{{ section.settings.silicone_why }}</p>
+    <ul>
+      {% assign silicone_lines = section.settings.silicone_benefits | newline_to_br | split: '<br />' %}
+      {% for item in silicone_lines %}
+        {% if item != blank %}
+          <li>{{ item | strip }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </article>
+
+  <article class="content-card">
+    <h2>How to Use</h2>
+    <ol>
+      {% assign usage_lines = section.settings.how_to_use | newline_to_br | split: '<br />' %}
+      {% for item in usage_lines %}
+        {% if item != blank %}
+          <li>{{ item | strip }}</li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </article>
+</section>
+
+<section class="section-container grid-two">
+  <article class="content-card">
+    <h2>Product Details</h2>
+    <ul>
+      {% assign details_lines = section.settings.product_details | newline_to_br | split: '<br />' %}
+      {% for item in details_lines %}
+        {% if item != blank %}
+          <li>{{ item | strip }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </article>
+
+  <article class="content-card">
+    <h2>Our Promise</h2>
+    {% assign promise_lines = section.settings.promise | newline_to_br | split: '<br />' %}
+    {% for item in promise_lines %}
+      {% if item != blank %}
+        <p>{{ item | strip }}</p>
+      {% endif %}
+    {% endfor %}
+  </article>
+</section>
+
+{% schema %}
+{
+  "name": "One Product Landing",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Featured product"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Smooth Your Wrinkles. Naturally."
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "Reusable silicone patches designed to help smooth the skin, prevent fine lines, and reveal a more rested, refreshed look, no injections needed."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Shop now"
+    },
+    {
+      "type": "text",
+      "id": "story_title",
+      "label": "Story title",
+      "default": "A Simpler Way to Care for Your Skin"
+    },
+    {
+      "type": "textarea",
+      "id": "story_body",
+      "label": "Story body",
+      "default": "Today, we’re all looking for simple, natural, and effective ways to take care of our skin."
+    },
+    {
+      "type": "textarea",
+      "id": "product_description",
+      "label": "Product description",
+      "default": "Our reusable silicone patches are designed to visibly smooth fine lines and support your skin overnight effortlessly."
+    },
+    {
+      "type": "textarea",
+      "id": "benefits",
+      "label": "Benefits (one per line)",
+      "default": "Helps reduce the appearance of fine lines and wrinkles\nSupports smoother, more even-looking skin"
+    },
+    {
+      "type": "text",
+      "id": "silicone_why",
+      "label": "Why silicone intro",
+      "default": "Silicone is widely used in skincare for its ability to:"
+    },
+    {
+      "type": "textarea",
+      "id": "silicone_benefits",
+      "label": "Why silicone bullets (one per line)",
+      "default": "Lock in moisture\nImprove skin texture"
+    },
+    {
+      "type": "textarea",
+      "id": "how_to_use",
+      "label": "How to use (one per line)",
+      "default": "Apply on clean, dry skin\nLeave on for 4–8 hours"
+    },
+    {
+      "type": "textarea",
+      "id": "product_details",
+      "label": "Product details (one per line)",
+      "default": "Reusable multiple times\nSuitable for all skin types"
+    },
+    {
+      "type": "textarea",
+      "id": "promise",
+      "label": "Promise (one per line)",
+      "default": "With consistent use:\nFine lines appear visibly reduced"
+    }
+  ],
+  "presets": [
+    {
+      "name": "One Product Landing"
+    }
+  ]
+}
+{% endschema %}
